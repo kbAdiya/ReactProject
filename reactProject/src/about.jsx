@@ -1,41 +1,18 @@
+import "./about.css"
+import Navbar from "./navbar";
+import BtsMain from "./assets/bts-main.jpg"
 function About() {
   return (
-    <section className="about text-center">
-      <h1>About Project</h1>
-      <div className="container">
-        <div className="row">
-          
-          <div className="col about-item">
-            <span>ℹ️</span>
-            <h2>Main info</h2>
-            
-              <p className="lead">
-              someinfo
-            </p>
-            
-          </div>
-
-          <div className="col about-item">
-            <span>🌟</span>
-            <h2>info</h2>
-            
-              <p className="lead">
-             some info
-            </p>
-            
-          </div>
-
-          <div className="col about-item">
-            <span>🚀</span>
-            <h2>Goals</h2>
-               <p className="lead">
-              goals
-            </p>
-            
-          </div>
-
-        </div>
-      </div>
+    <section id="about" className="about text-center">
+    
+        <img src={BtsMain} alt="BTS" className="about-bg" />
+                <div className="about-overlay">
+                    <div className="about-text">
+                         <h2>About project</h2>
+                          <p>This website was created by a fan to share love and appreciation for BTS — from their music, achievements, and messages to fun facts and updates. Here, you can explore profiles, watch videos, and celebrate everything BTS stands for. </p>
+                     </div>
+                     
+                </div> 
     </section>
   );
 }
