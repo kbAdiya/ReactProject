@@ -32,16 +32,17 @@ useEffect(() => {
     )
       .then((res) => res.json())
       .then((data) => {
-        const rawText = data.parse.wikitext["*"]; 
-        const doc = wtf(rawText);
-        const section = doc.section("Members");
+        // console.log(data);
+        const rawText = data.parse.wikitext["*"];  
+        //  console.log(rawText);
+        const wtext = wtf(rawText);
+        const section = wtext.section("Members");
         if (section) {
           const lines = section
             .text()
             .split("\n")
             .map(line =>
-            line
-              .replace(/^[\*\•\-\s]+/, "") 
+            line.replace(/^[\*\s]+/, "") 
           )
             .filter((line) => line.trim() !== "")
           setMembers(lines);
@@ -90,8 +91,8 @@ useEffect(() => {
       </div>
 
        {selectedMember && (
-        <div className="overlay" onClick={() => setSelectedMember(null)}>
-          <div className="overlay-card" onClick={(e) => e.stopPropagation()}>
+         <div className="overlay" > 
+          <div className="overlay-card" >
             <button className="close-btn" onClick={() => setSelectedMember(null)}>
               ×
             </button>

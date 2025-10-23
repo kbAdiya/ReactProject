@@ -16,17 +16,14 @@ function MemberCard({ name }) {
 
   useEffect(() => {
   
-    const cleanName = name.split("–")[0].trim().split(" ")[0];
-    const wikiTitle = wikiNames[cleanName] 
+    const wikiTitle = wikiNames[name] 
 
     fetch(
-      `/wikiapi/w/api.php?action=query&prop=extracts&exintro=true&explaintext=true&titles=${encodeURIComponent(
-        wikiTitle
-      )}&format=json`
+      `/wikiapi/w/api.php?action=query&prop=extracts&exintro=true&explaintext=true&titles=${encodeURIComponent(wikiTitle)}&format=json`
     )
       .then((res) => res.json())
       .then((data) => {
-        const page = data.query.pages[Object.keys(data.query.pages)[0]];
+         const page = Object.values(data.query.pages)[0];
         setInfo(page.extract);
       })
        .catch((err) => {

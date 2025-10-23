@@ -1,5 +1,5 @@
 import "./about.css"
-import Navbar from "./navbar";
+// import Navbar from "./navbar";
 import BtsMain from "./assets/bts-main.jpg"
 function About() {
   return (

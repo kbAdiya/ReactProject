@@ -13,7 +13,8 @@ function MainBTS() {
     )
       .then((res) => res.json())
       .then((data) => {
-        const page = data.query.pages[Object.keys(data.query.pages)[0]];
+        // console.log(data);
+        const page = Object.values(data.query.pages)[0];
         const firstParagraph = page.extract.split("\n")[0];
         setInfo(firstParagraph);
       })

@@ -30,9 +30,7 @@
   flex-wrap: wrap;
    justify-content: flex-start;
    padding-left: 30px;
-  gap: 20px;
-  justify-items: center;
-
+  gap: 30px;
 }
 
 .member-item {
