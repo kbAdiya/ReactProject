@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import MemberCard from "./memberCard";
-import "./memberList.css";
+import "./styles/memberList.css";
 import Jin from "./assets/member-jin.jpg";
 import Suga from "./assets/member-suga.jpg";
 import JHope from "./assets/member-jhope.jpg";
@@ -28,7 +28,7 @@ function MemberList() {
 useEffect(() => {
   
     fetch(
-      "/wikiapi/w/api.php?action=parse&page=BTS&prop=wikitext&format=json"
+      "https://en.wikipedia.org/w/api.php?action=parse&page=BTS&prop=wikitext&format=json&origin=*"
     )
       .then((res) => res.json())
       .then((data) => {

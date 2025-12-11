@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./memberCard.css"
+import "./styles/memberCard.css"
 function MemberCard({ name }) {
   const [info, setInfo] = useState("");
 
@@ -19,10 +19,14 @@ function MemberCard({ name }) {
     const wikiTitle = wikiNames[name] 
 
     fetch(
-      `/wikiapi/w/api.php?action=query&prop=extracts&exintro=true&explaintext=true&titles=${encodeURIComponent(wikiTitle)}&format=json`
+      `https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&explaintext=true&titles=${encodeURIComponent(wikiTitle)}&format=json&origin=*`
     )
       .then((res) => res.json())
       .then((data) => {
+         if (!data.query || !data.query.pages) {
+        setInfo("Offline: member info unavailable.");
+        return;
+      }
          const page = Object.values(data.query.pages)[0];
         setInfo(page.extract);
       })

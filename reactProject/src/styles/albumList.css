@@ -1,0 +1,76 @@
+/* ==== CONTAINER ==== */
+.album-list-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 90px;
+}
+
+.album-list-section h1 {
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  flex: 1;
+  border-radius: 25px;
+  border: 1px solid #6b00b6;
+  background: #fefcfc;
+  color: rgb(12, 12, 12);
+}
+
+.clear-btn,
+.limit-select {
+  padding: 10px 14px;
+  background: #6b00b6;
+  border: 1px solid #555;
+  color: white;
+  border-radius: 6px;
+}
+
+.clear-btn:hover {
+  background: #6c5ce7; 
+}
+
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+  padding-top: 10px;
+}
+ 
+.pagination {
+  margin-top: 25px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  background: #6b00b6;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pagination span {
+  color: white;
+  font-size: 16px;
+}
+

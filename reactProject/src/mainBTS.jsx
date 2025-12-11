@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import MemberList from "./memberList";
-import "./mainBTS.css";
+import "./styles/mainBts.css";
 import BtsMain from "./assets/bts-main.jpg"
-import Navbar from "./navbar";
+
 
 function MainBTS() {
  const [info, setInfo] = useState("");
 
   useEffect(() => {
     fetch(
-      `/wikiapi/w/api.php?action=query&prop=extracts&exintro=true&explaintext=true&titles=BTS&format=json`
+      `https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&explaintext=true&titles=BTS&format=json&origin=*`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -28,7 +28,7 @@ function MainBTS() {
 
   return (
     <div className="main-bts">
-         <Navbar />
+
         <section id="hero" className="hero">
                <img src={BtsMain} alt="BTS" className="hero-bg" />
           <div className="hero-overlay">
@@ -36,9 +36,7 @@ function MainBTS() {
                    <h2>BTS</h2>
                     <p>{info}</p>
                </div>
-               <div >
-                <button className="button-more">more</button>
-               </div>
+               
           </div>      
         </section>
 
@@ -48,16 +46,6 @@ function MainBTS() {
         <MemberList />
            </section>
   
-
-     
-
-        <section id="discography">
-        <h3>Discography (Coming Soon)</h3>
-      </section>
-
- {/* <div>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/gwMa6gpoE9I?si=lgaiC7LOFY5QAnZP&amp;start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-    </div> */}
     </div>
   );
 }

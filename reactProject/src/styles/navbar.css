@@ -1,0 +1,77 @@
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1000px;
+  z-index: 1000;
+ 
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center; 
+  padding-right: 40px;
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: rgb(245, 243, 243);
+  font-size: 18px;
+  font-family: inherit;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #a29bfe;
+}
+
+
+.logout-btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5); 
+  border-radius: 5px;
+  color: rgb(245, 243, 243);
+  font-size: 16px;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 5px 15px;
+
+  position: static !important; 
+  transform: none !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+.logout-btn:hover {
+  color: #a29bfe;
+  border-color: #a29bfe;
+}
+
+
+.merge-notification {
+  position: absolute;
+  top: 70px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 0 0 10px 10px;
+  font-weight: bold;
+  z-index: 900;
+  animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
